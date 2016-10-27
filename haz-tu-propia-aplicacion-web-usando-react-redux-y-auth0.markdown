@@ -92,32 +92,32 @@ const authCheck = jwt({
 var contacts = [
   {
     id: 1,
-    name: 'Chris Sevilleja',
-    email: 'chris@scotch.io',
-    image: '//gravatar.com/avatar/8a8bf3a2c952984defbd6bb48304b38e?s=200'
+    name: 'Kim',
+    email: 'kim@email.com',
+    image: 'https://en.gravatar.com/userimage/20807150/4c9e5bd34750ec1dcedd71cb40b4a9ba.png'
   },
   {
     id: 2,
-    name: 'Nick Cerminara',
-    email: 'nick@scotch.io',
-    image: '//gravatar.com/avatar/5d0008252214234c609144ff3adf62cf?s=200'
+    name: 'Gonto',
+    email: 'gonto@email.com',
+    image: 'https://www.gravatar.com/avatar/df6c864847fba9687d962cb80b482764??s=200'
   },
   {
     id: 3,
-    name: 'Ado Kukic',
-    email: 'ado@scotch.io',
+    name: 'Ado',
+    email: 'ado@email.com',
     image: '//gravatar.com/avatar/99c4080f412ccf46b9b564db7f482907?s=200'
   },
   {
     id: 4,
-    name: 'Holly Lloyd',
-    email: 'holly@scotch.io',
-    image: '//gravatar.com/avatar/5e074956ee8ba1fea26e30d28c190495?s=200'
+    name: 'Sebastián',
+    email: 'sebastian@email.com',
+    image: 'http://en.gravatar.com/userimage/92476393/001c9ddc5ceb9829b6aaf24f5d28502a.png?size=200'
   },
   {
     id: 5,
-    name: 'Ryan Chenkie',
-    email: 'ryan@scotch.io',
+    name: 'Ryan',
+    email: 'ryan@email.com',
     image: '//gravatar.com/avatar/7f4ec37467f2f7db6fffc7b4d2cc8dc2?s=200'
   }
 ];
@@ -1032,7 +1032,7 @@ import AuthStore from '../stores/AuthStore';
 
 Configuramos la cabecera `Authorization` con el prefijo `Bearer` seguido de nuestro JWT (el cual podemos obtener de nuestro almacén). Con esto presente, ya deberíamos poder acceder a los detalles de nuestros contactos.
 
-![Los detalles de contacto](8.png?raw=true)
+![Los detalles de contacto](1.png?raw=true)
 
 ## Toques finales: muestra condicional de elementos
 Ya casi tenemos todo en nuestro ejemplo. Nos quedaría poder mostrar condicionalmente algunos elementos. El elemento `Login` de la barra superior lo queremos mostrar únicamente si el usuario no se encuentra autenticado. Lo opuesto ocurre para el elemento `Logout`.
