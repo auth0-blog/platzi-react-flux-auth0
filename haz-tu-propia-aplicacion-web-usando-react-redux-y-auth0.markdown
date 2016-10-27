@@ -1,6 +1,8 @@
 # Haz Tu Propia Aplicación Web Usando React, Flux y Auth0
 En este post veremos cómo utilizar tres de las tecnologías web más populares para hacer una aplicación con llamadas a una API remota y con autenticación de usuarios. Léelo!
 
+[Accede al código de ejemplo!](https://github.com/auth0/platzi-react-flux-auth0-example)
+
 ## Introducción
 El ecosistema de React es inmenso, y en él hay muchas módulos que podemos elegir para remover la fricción de las partes complejas de React. Algunas de las partes que más fricción generan son la de manejo de estado y la de ruteo. Y dos opciones populares para el manejo de estas partes son: Flux y React Router.
 
@@ -8,14 +10,14 @@ Nos concentraremos en este post en tratar de entender cómo utilizar estas tecno
 
 Utilizaremos como ejemplo una simple aplicación de contactos. La misma recibirá toda su información haciendo consultas a una API remota. Del lado del servidor, utilizaremos Node.js con Express, aunque cualquier servidor puede cumplir las funciones necesarias mientras pueda manejar datos en formato JSON.
 
-Una de las mejores formas de manejar los datos de autenticación es utilizar [JSON Web Tokens (JWTs)](). Desde luego, todo lo que tiene que ver con autenticación y autorización de usuarios tiende a ser complejo y sensible. Por eso, utilizaremos [Auth0](), un servicio de autenticación, para que se haga cargo de manejar esta complejidad por nosotros. Entre otras características, con Auth0 tendremos una pantalla de login con soporte para ingreso seguro desde Facebook, Twitter y otras plataformas sociales con solo un par de líneas de código.
+Una de las mejores formas de manejar los datos de autenticación es utilizar [JSON Web Tokens (JWTs)](https://jwt.io/?utm_source=platzi&utm_medium=gp&utm_campaign=react_auth). Desde luego, todo lo que tiene que ver con autenticación y autorización de usuarios tiende a ser complejo y sensible. Por eso, utilizaremos [Auth0](https://auth0.com/?utm_source=platzi&utm_medium=gp&utm_campaign=react_auth), un servicio de autenticación, para que se haga cargo de manejar esta complejidad por nosotros. Entre otras características, con Auth0 tendremos una pantalla de login con soporte para ingreso seguro desde Facebook, Twitter y otras plataformas sociales con solo un par de líneas de código.
 
 ![La aplicación corriendo](1.png?raw=true)
 
 Comencemos!
 
 ## Configurando un nuevo proyecto de React
-Utilizaremos React con ECMAScript/JavaScript 2015. Esto significa que necesitaremos hacer uso de un "transpiler", es decir, un compilador que se encargará de traducir nuestro JavaScript moderno a una versión anterior, a favor de que funcione correctamente en la mayor cantidad de browsers posible. Ésta es una práctica común en el mundo de JavaScript actual. Para manejar los distintos aspectos de la compilación utilizaremos [Webpack](), un empaquetador web que, entre otras cosas, puede invocar a un compilador como parte del proceso de empaquetado. Afortunadamente, también tenemos una herramienta que podemos utilizar para ayudarnos a generar la estructura inicial del proyecto: Yeoman. Veamos:
+Utilizaremos React con ECMAScript/JavaScript 2015. Esto significa que necesitaremos hacer uso de un "transpiler", es decir, un compilador que se encargará de traducir nuestro JavaScript moderno a una versión anterior, a favor de que funcione correctamente en la mayor cantidad de browsers posible. Ésta es una práctica común en el mundo de JavaScript actual. Para manejar los distintos aspectos de la compilación utilizaremos [Webpack](https://webpack.github.io), un empaquetador web que, entre otras cosas, puede invocar a un compilador como parte del proceso de empaquetado. Afortunadamente, también tenemos una herramienta que podemos utilizar para ayudarnos a generar la estructura inicial del proyecto: Yeoman. Veamos:
 
 ```sh
 npm install -g yo
@@ -140,7 +142,7 @@ En este bloque de código tenemos una lista de contactos que es retornada de dos
 ## Auth0 como servidor de autenticación
 En el paso anterior utilizamos la función `authCheck` como middleware para autenticar el acceso a una URL. Afortunadamente el funcionamiento de esto es relativamente sencillo. Al acceder dicha URL, un JSON Web Token (JWT) debe estar incluido en el pedido HTTP. Para validar dicho JWT, el middleware debe conocer dos datos: el id de cliente de Auth0, y la clave secreta correspondiente. Estos datos los podemos obtener de nuestra cuenta de Auth0.
 
-Si aún no te has suscripto a Auth0, éste es el momento de hacerlo. Entra a [auth0.com](https://auth0.com/signup) y sigue los pasos. Una vez que te hayas registrado, encontrarás los datos de tu aplicación en el área de [administración](https://manage.auth0.com). Busca `Client ID` y `Client secret`. Una vez que tengas esos datos, complétalos en `server.js`.
+Si aún no te has suscripto a Auth0, éste es el momento de hacerlo. Entra a [auth0.com](https://auth0.com/signup/?utm_source=platzi&utm_medium=gp&utm_campaign=react_auth) y sigue los pasos. Una vez que te hayas registrado, encontrarás los datos de tu aplicación en el área de [administración](https://manage.auth0.com). Busca `Client ID` y `Client secret`. Una vez que tengas esos datos, complétalos en `server.js`.
 
 Asimismo, en el apartado de `Allowed Origins` (orígenes permitidos) debe completarse `https://localhost:8000`, para permitir que este ejemplo pueda correrse de manera local.
 
@@ -831,7 +833,7 @@ A esta altura ya es posible hacer click en un contacto. Sin embargo aún no pode
 El motivo de este error de autorización es que tenemos el `middleware` que protege el acceso a la URL de detalles de contactos. Es necesario que el servidor reciba de parte del cliente un JWT válido. Para eso, el cliente primero debe ser autenticado. Nos concentraremos en eso a continuación.
 
 ## Autenticación
-¿Qué es lo que ocurre exactamente cuándo un usuario realiza el proceso de login a través de Auth0? Cuando un usuario realiza el proceso de login completo, una serie de elementos son retornados. El más interesante de estos es `id_token`, un JWT que contiene información acerca del usuario autenticado. Otros elementos retornados son un [access token]() y un [refresh token]().
+¿Qué es lo que ocurre exactamente cuándo un usuario realiza el proceso de login a través de Auth0? Cuando un usuario realiza el proceso de login completo, una serie de elementos son retornados. El más interesante de estos es `id_token`, un JWT que contiene información acerca del usuario autenticado. Otros elementos retornados son un [access token](https://auth0.com/docs/tokens/access_token/?utm_source=platzi&utm_medium=gp&utm_campaign=react_auth) y un [refresh token](https://auth0.com/docs/refresh-token/?utm_source=platzi&utm_medium=gp&utm_campaign=react_auth).
 
 Las buenas noticias es que al tener este elemento en el cliente ya tenemos una buena parte del proceso de autenticación para nuestra aplicación realizado. Veremos como utilizar Flux para manejar los datos retornados por el proceso de autenticación.
 
@@ -1108,8 +1110,8 @@ No hay duda al respecto: crear una aplicación de React + Flux puede requerir ba
 
 Afortunadamente, la parte de autenticación, que algunas veces puede ser difícil, queda en manos de Auth0. Si el backend es realizado con una tecnología diferente a Node.js, Auth0 soporta los SDKs más populares. Algunos de ellos (¡pero no todos!) son:
 
-- Laravel
-- Go
-- Ruby on Rails
-- Firebase
-- Python
+- [Laravel](https://auth0.com/docs/quickstart/backend/php-laravel/?utm_source=platzi&utm_medium=gp&utm_campaign=react_auth)
+- [Go](https://auth0.com/docs/quickstart/backend/golang/?utm_source=platzi&utm_medium=gp&utm_campaign=react_auth)
+- [Ruby on Rails](https://auth0.com/docs/quickstart/backend/rails/?utm_source=platzi&utm_medium=gp&utm_campaign=react_auth)
+- [Firebase](https://auth0.com/docs/quickstart/backend/firebase/?utm_source=platzi&utm_medium=gp&utm_campaign=react_auth)
+- [Python](https://auth0.com/docs/quickstart/backend/python/?utm_source=platzi&utm_medium=gp&utm_campaign=react_auth)
