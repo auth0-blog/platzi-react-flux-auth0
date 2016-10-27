@@ -142,7 +142,7 @@ En este bloque de código tenemos una lista de contactos que es retornada de dos
 ## Auth0 como servidor de autenticación
 En el paso anterior utilizamos la función `authCheck` como middleware para autenticar el acceso a una URL. Afortunadamente el funcionamiento de esto es relativamente sencillo. Al acceder dicha URL, un JSON Web Token (JWT) debe estar incluido en el pedido HTTP. Para validar dicho JWT, el middleware debe conocer dos datos: el id de cliente de Auth0, y la clave secreta correspondiente. Estos datos los podemos obtener de nuestra cuenta de Auth0.
 
-Si aún no te has suscripto a Auth0, éste es el momento de hacerlo. Entra a [auth0.com](https://auth0.com/signup/?utm_source=platzi&utm_medium=gp&utm_campaign=react_auth) y sigue los pasos. Una vez que te hayas registrado, encontrarás los datos de tu aplicación en el área de [administración](https://manage.auth0.com). Busca `Client ID` y `Client secret`. Una vez que tengas esos datos, complétalos en `server.js`.
+Si aún no te has suscripto a Auth0, éste es el momento de hacerlo. Entra a [auth0.com](https://auth0.com/signup/?utm_source=platzi&utm_medium=gp&utm_campaign=react_auth) y sigue los pasos. Una vez que te hayas registrado, encontrarás los datos de tu aplicación en el área de [administración](https://manage.auth0.com/?utm_source=platzi&utm_medium=gp&utm_campaign=react_auth). Busca `Client ID` y `Client secret`. Una vez que tengas esos datos, complétalos en `server.js`.
 
 Asimismo, en el apartado de `Allowed Origins` (orígenes permitidos) debe completarse `https://localhost:8000`, para permitir que este ejemplo pueda correrse de manera local.
 
