@@ -130,7 +130,7 @@ app.get('/api/contacts', (req, res) => {
 });
 
 app.get('/api/contacts/:id', authCheck, (req, res) => {
-  res.json(contacts.filter(contact => contact.id === parseInt(req.params.id)));
+  res.json(contacts.filter(contact => contact.id === parseInt(req.params.id))[0]);
 });
 
 app.listen(3001);
