@@ -137,7 +137,7 @@ app.listen(3001);
 console.log('Listening on http://localhost:3001');
 ```
 
-En este bloque de código tenemos una lista de contactos que es retornada de dos URLs distintas. Para la URL `/api/contacts` utilizamos `map` para retornar sólo los campos `id` y `name`. Para la URL `/api/contacts/:id` utilizamos el `id` pasado como parámetro para retornar todos los datos asociados a dicho `id`. Esta URL en particular requiere de autenticación. Para mantener el ejemplo lo más sencillo posible, en lugar de hacer uso de una base de datos, la lista de contactos se encuentran directamente integrada en el código.
+En este bloque de código tenemos una lista de contactos que es retornada de dos URLs distintas. Para la URL `/api/contacts` utilizamos `map` para retornar sólo los campos `id` y `name`. Para la URL `/api/contacts/:id` utilizamos el `id` pasado como parámetro para retornar todos los datos asociados a dicho `id`. Esta URL en particular requiere de autenticación. Para mantener el ejemplo lo más sencillo posible, en lugar de hacer uso de una base de datos, la lista de contactos se encuentra directamente integrada en el código.
 
 ## Auth0 como servidor de autenticación
 En el paso anterior utilizamos la función `authCheck` como middleware para autenticar el acceso a una URL. Afortunadamente el funcionamiento de esto es relativamente sencillo. Al acceder dicha URL, un JSON Web Token (JWT) debe estar incluido en el pedido HTTP. Para validar dicho JWT, el middleware debe conocer dos datos: el id de cliente de Auth0, y la clave secreta correspondiente. Estos datos los podemos obtener de nuestra cuenta de Auth0.
