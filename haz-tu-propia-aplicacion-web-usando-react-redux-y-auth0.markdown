@@ -447,7 +447,7 @@ export default {
 }
 ```
 
-En Flux las acciones deben despachar un `actionType` (alguno de los tipos predefinidos de acciones posibles) y datos arbitrarios (un mensaje). Normalmente, estos datos se encuentran asociados con la acción y son obtenidos a través del almacén de dato conectado a la misma.
+En Flux las acciones deben despachar un `actionType` (alguno de los tipos predefinidos de acciones posibles) y datos arbitrarios (un mensaje). Normalmente, estos datos se encuentran asociados con la acción y son obtenidos a través del almacén de datos conectado a la misma.
 
 Hay opiniones opuestas con respecto a si realizar llamadas a URLs de la API dentro de acciones es una buena idea. Algunos creen que este tipo de actividades deben ser realizadas por los almacenes de datos. En última instancia, el lugar que se elija para realizar este tipo de actividades queda a criterio del desarrollador y lo que sea mejor para la aplicación en cuestión.
 
