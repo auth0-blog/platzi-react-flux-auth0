@@ -379,7 +379,7 @@ También deberíamos poder ver la pantalla de autenticación al hacer clic en `l
 ## Implementando Flux
 Flux es una gran herramienta para el manejo de estado, pero una de sus desventajas es que requiere bastante código. Para mantener esta sección lo más corta posible, evitaremos entrar en detalles de Flux. Hay muy buenos tutoriales y explicaciones en la web.
 
-Para ser lo más concreto posible, Flux es una arquitectura que nos permite manejar el flujo de datos de nuestras aplicaciones. Este flujo es, por diseño, unidireccional. Una arquitectura donde el flujo de datos va en una única dirección es importante en aplicaciones de tamaño considerable. Esto se debe a que es más sencillo razonar en aplicaciones de estas características.
+Para ser lo más concretos posible, Flux es una arquitectura que nos permite manejar el flujo de datos de nuestras aplicaciones. Este flujo es, por diseño, unidireccional. Una arquitectura donde el flujo de datos va en una única dirección es importante en aplicaciones de tamaño considerable. Esto se debe a que es más sencillo razonar en aplicaciones de estas características.
 
 Los conceptos fundamentales de Flux son las **acciones** (actions), el **despachante** (dispatcher), y los **almacenes de datos** (stores).
 
