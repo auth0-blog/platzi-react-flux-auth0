@@ -366,7 +366,7 @@ class IndexComponent extends Component {
 export default IndexComponent;
 ```
 
-Finalmente estamos listo para ver nuestra aplicación por primera vez! Pero primero, es necesario que comentemos algunas cosas que se encuentran en `Root.js`. Aún no tenemos un componente `ContactDetail`, así que por el momento removeremos su `import` y su ruta asociada.
+Finalmente estamos listos para ver nuestra aplicación por primera vez! Pero primero, es necesario que comentemos algunas cosas que se encuentran en `Root.js`. Aún no tenemos un componente `ContactDetail`, así que por el momento removeremos su `import` y su ruta asociada.
 
 Si todo sale bien, así debería verse la aplicación a esta altura:
 
