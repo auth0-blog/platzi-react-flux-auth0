@@ -4,7 +4,7 @@ En este post veremos cómo utilizar tres de las tecnologías web más populares 
 [Accede al código de ejemplo!](https://github.com/auth0/platzi-react-flux-auth0-example)
 
 ## Introducción
-El ecosistema de React es inmenso, y en él hay muchas módulos que podemos elegir para remover la fricción de las partes complejas de React. Algunas de las partes que más fricción generan son la de manejo de estado y la de ruteo. Y dos opciones populares para el manejo de estas partes son: Flux y React Router.
+El ecosistema de React es inmenso, y en él hay muchos módulos que podemos elegir para remover la fricción de las partes complejas de React. Algunas de las partes que más fricción generan son la de manejo de estado y la de ruteo. Y dos opciones populares para el manejo de estas partes son: Flux y React Router.
 
 Nos concentraremos en este post en tratar de entender cómo utilizar estas tecnologías en un contexto real. En particular, veremos cómo utilizarlas eficientemente para realizar llamadas a una API remota, y también para autenticar usuarios.
 
